@@ -1,0 +1,11 @@
+{% extends "app_workouts/base.html" %}
+{% block content %}
+<h2>{{ month }}/{{ year }} - Selecciona un día</h2>
+<ul class="list-group">
+  {% for day in days %}
+  <li class="list-group-item">
+    <a href="{% url 'workout_detail' year month day %}">{{ day }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,9 +1,10 @@
-# example/urls.py
 from django.urls import path
-
-from example.views import index
-
+from . import views
 
 urlpatterns = [
-    path('', index),
+    path("", views.index, name="index"),
+    path("years/", views.years, name="years"),
+    path("months/<int:year>/", views.months, name="months"),
+    path("days/<int:year>/<int:month>/", views.days, name="days"),
+    path("workout/<int:year>/<int:month>/<int:day>/", views.workout_detail, name="workout_detail"),
 ]

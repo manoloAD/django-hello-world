@@ -1,0 +1,24 @@
+{% extends "app_workouts/base.html" %}
+{% block content %}
+<h2>Entrenamiento del {{ day }}/{{ month }}/{{ year }}</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Ejercicio</th>
+      <th>Series</th>
+      <th>Repeticiones</th>
+      <th>Peso</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in workout %}
+    <tr>
+      <td>{{ row.Ejercicio }}</td>
+      <td>{{ row.Series }}</td>
+      <td>{{ row.Repeticiones }}</td>
+      <td>{{ row.Peso }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "app_workouts/base.html" %}
+{% block content %}
+<h2>Año {{ year }} - Selecciona un mes</h2>
+<ul class="list-group">
+  {% for month in months %}
+  <li class="list-group-item">
+    <a href="{% url 'days' year month %}">{{ month }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
